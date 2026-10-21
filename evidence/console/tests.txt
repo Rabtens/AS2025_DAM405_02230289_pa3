@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.16, pytest-9.1.1, pluggy-1.7.0 -- /usr/bin/python3
+rootdir: /home/claude/pa3
+plugins: anyio-4.15.1, Faker-40.43.0
+collecting ... collected 11 items
+
+tests/test_pa3.py::test_experiment_has_baselines_and_automl_runs PASSED  [  9%]
+tests/test_pa3.py::test_automl_beats_logistic_baseline PASSED            [ 18%]
+tests/test_pa3.py::test_champion_registered_and_predicts PASSED          [ 27%]
+tests/test_pa3.py::test_logging_writes_json_with_timestamp_and_level PASSED [ 36%]
+tests/test_pa3.py::test_psi_zero_for_identical_distributions PASSED      [ 45%]
+tests/test_pa3.py::test_no_drift_on_sample_from_same_distribution PASSED [ 54%]
+tests/test_pa3.py::test_drift_flagged_when_age_shifts PASSED             [ 63%]
+tests/test_pa3.py::test_predict_valid_record PASSED                      [ 72%]
+tests/test_pa3.py::test_predict_invalid_record_returns_400 PASSED        [ 81%]
+tests/test_pa3.py::test_server_error_returns_500_and_logs_error PASSED   [ 90%]
+tests/test_pa3.py::test_metrics_count_requests_and_errors PASSED         [100%]
+
+============================== 11 passed in 3.41s ==============================

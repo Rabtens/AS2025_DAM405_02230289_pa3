@@ -1,0 +1,12 @@
+2026-10-17 19:03:36,497 | INFO     | pa3.explain | explaining model | model=adult-income-classifier version=1 estimator=LGBMClassifier
+2026-10-17 19:03:42,209 | INFO     | pa3.explain | explanations written | top_features=['age', 'marital_status', 'capital_gain', 'relationship', 'education_num'] folder=artifacts/shap
+age               0.8193
+marital_status    0.7330
+capital_gain      0.6047
+relationship      0.5316
+education_num     0.4580
+hours_per_week    0.3338
+occupation        0.2716
+capital_loss      0.1335
+workclass         0.0615
+native_country    0.0286

@@ -1,0 +1,15 @@
+2026-10-17 18:57:26,774 | INFO     | pa3.train | data split | train_rows=26048 test_rows=6513 positive_rate_train=0.2408
+2026-10-17 18:57:33,501 | INFO     | pa3.train | run finished | run=baseline_dummy cv_roc_auc=0.5 test_roc_auc=0.5 train_time_s=0.4
+2026-10-17 18:57:38,391 | INFO     | pa3.train | run finished | run=baseline_logreg cv_roc_auc=0.9043 test_roc_auc=0.9083 train_time_s=1.1
+2026-10-17 18:57:43,633 | INFO     | pa3.train | run finished | run=baseline_lgbm_default cv_roc_auc=0.9272 test_roc_auc=0.9301 train_time_s=1.4
+2026-10-17 18:57:43,709 | INFO     | pa3.train | AutoML search started | tool=FLAML time_budget_s=300 estimators=['lgbm', 'xgboost', 'rf', 'extra_tree']
+2026-10-17 19:02:44,247 | INFO     | pa3.train | AutoML search finished | best_estimator=lgbm best_cv_roc_auc=0.9271 search_time_s=300.5
+2026-10-17 19:02:52,301 | INFO     | pa3.train | model selected | run=flaml_automl cv_roc_auc=0.9277 test_roc_auc=0.9307
+2026-10-17 19:02:52,464 | INFO     | pa3.train | model registered | name=adult-income-classifier version=1 alias=champion source_run=flaml_automl
+                       cv_roc_auc  test_roc_auc  test_pr_auc  test_f1  test_accuracy  train_time_s
+run_name                                                                                          
+baseline_dummy             0.5000        0.5000       0.2407   0.0000         0.7593        0.4020
+baseline_logreg            0.9043        0.9083       0.7767   0.6704         0.8548        1.1221
+baseline_lgbm_default      0.9272        0.9301       0.8353   0.7231         0.8753        1.3738
+flaml_automl               0.9277        0.9307       0.8376   0.7253         0.8769      300.5102
+Registered adult-income-classifier v1 (@champion) from run flaml_automl

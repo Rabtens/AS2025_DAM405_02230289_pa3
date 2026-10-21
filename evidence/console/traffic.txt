@@ -1,0 +1,49 @@
+health: {'alias': 'champion', 'model': 'adult-income-classifier', 'status': 'ok', 'version': 1}
+
+=== 1. normal traffic ===
+normal: 400 requests in 6.1s, HTTP 200 = 400, predicted >50K = 21.8%
+
+=== 2. invalid requests -> HTTP 400 ===
+missing field      -> 400 missing feature(s): ['age']
+text in numeric    -> 400 feature 'hours_per_week' must be numeric
+empty records      -> 400 expected {'records': [ {...}, ... ]} or a single record object
+too many records   -> 400 at most 1000 records per request
+not JSON           -> 400 request body must be JSON
+
+=== 3. unusual but valid input -> served with WARNING ===
+unknown category   -> 200 {'income': '<=50K', 'label': 0, 'probability': 0.0588}
+age out of range   -> 200 {'income': '<=50K', 'label': 0, 'probability': 0.0999}
+
+=== 4. drift check on normal traffic ===
+status=ok samples=402 drifted=[]
+
+=== 5. drifted traffic (new client segment) ===
+drifted: 500 requests in 7.7s, HTTP 200 = 500, predicted >50K = 23.4%
+status=drift samples=500 drifted=['age', 'hours_per_week', 'occupation']
+  age             PSI=1.486  drift    KS p=5.6e-53  mean 38.6 -> 50.3
+  capital_gain    PSI=0.000  stable   KS p=1.0e+00  mean 1135.1 -> 889.9
+  capital_loss    PSI=0.000  stable   KS p=1.0e+00  mean 80.9 -> 78.7
+  education_num   PSI=0.004  stable   KS p=9.9e-01  mean 10.1 -> 10.2
+  hours_per_week  PSI=1.650  drift    KS p=3.0e-172  mean 40.5 -> 51.9
+  marital_status  PSI=0.008  stable   top: Married-civ-spouse (45%)
+  native_country  PSI=0.111  moderate top: United-States (90%)
+  occupation      PSI=0.406  drift    top: Prof-specialty (30%)
+  relationship    PSI=0.005  stable   top: Husband (40%)
+  workclass       PSI=0.017  stable   top: Private (70%)
+
+=== 6. final monitoring metrics ===
+{
+  "client_errors": 5,
+  "error_rate": 0.0055,
+  "input_warnings": 2,
+  "latency_ms_max": 56.19,
+  "latency_ms_mean": 12.62,
+  "latency_ms_p50": 12.08,
+  "latency_ms_p95": 17.05,
+  "model_version": 1,
+  "positive_rate": 0.2262,
+  "records_scored": 902,
+  "requests": 907,
+  "server_errors": 0,
+  "uptime_s": 16.2
+}

@@ -1,0 +1,5 @@
+2026-10-17 19:04:35,517 | INFO     | pa3.service | service ready | model=adult-income-classifier version=1 alias=champion run_id=063c5bf4 features=10
+2026-10-17 19:04:35,533 | DEBUG    | pa3.service | request payload | request_id=39b7c5665c70 payload={'records': [{'age': 61.0, 'capital_gain': 0.0, 'capital_loss': 0.0, 'education_num': 15.0, 'hours_per_week': 50.0, 'marital_status': 'Married-civ-spouse', 'native_country': 'United-States', 'occupation': 'Prof-specialty', 'relationship': 'Husband', 'workclass': 'Self-emp-not-inc'}]}
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+2026-10-17 19:04:35,561 | INFO     | pa3.service | request handled | request_id=39b7c5665c70 endpoint=/predict status=200 records=1 positive=1 latency_ms=27.48

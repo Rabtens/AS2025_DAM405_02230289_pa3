@@ -1,0 +1,7 @@
+attribute,group,n,actual_positive_rate,predicted_positive_rate,true_positive_rate
+sex,Female,2158,0.114,0.095,0.682
+sex,Male,4355,0.304,0.263,0.674
+race,Amer-Indian-Eskimo,73,0.123,0.096,0.444
+race,Asian-Pac-Islander,200,0.26,0.26,0.673
+race,Black,662,0.14,0.11,0.602
+race,White,5533,0.255,0.22,0.681

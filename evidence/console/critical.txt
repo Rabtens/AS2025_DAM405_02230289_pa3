@@ -1,0 +1,4 @@
+2026/10/17 19:04:38 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/17 19:04:38 INFO mlflow.store.db.utils: Updating database tables
+2026-10-17 19:04:39,860 | CRITICAL | pa3.service | service cannot start - model or reference data unavailable | model=adult-income-classifier@champion error=MlflowException: Registered Model with name=adult-income-classifier not found
+exit=1

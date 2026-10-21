@@ -1,0 +1,11 @@
+,mean_abs_shap,model_importance,model_importance_rank,shap_rank
+age,0.8193,2193,1,1
+marital_status,0.733,632,8,2
+capital_gain,0.6047,1335,4,3
+relationship,0.5316,534,10,4
+education_num,0.458,1274,5,5
+hours_per_week,0.3338,1513,2,6
+occupation,0.2716,1339,3,7
+capital_loss,0.1335,1261,6,8
+workclass,0.0615,721,7,9
+native_country,0.0286,568,9,10

@@ -1,0 +1,51 @@
+{
+  "normal": {
+    "requests": 400,
+    "ok": 400,
+    "positive_rate": 0.2175
+  },
+  "drift_before": {
+    "age": 0.0211,
+    "capital_gain": 0.0,
+    "capital_loss": 0.0,
+    "education_num": 0.0194,
+    "hours_per_week": 0.0243,
+    "marital_status": 0.0126,
+    "native_country": 0.1467,
+    "occupation": 0.0435,
+    "relationship": 0.0208,
+    "workclass": 0.0085
+  },
+  "drifted": {
+    "requests": 500,
+    "ok": 500,
+    "positive_rate": 0.234
+  },
+  "drift_after": {
+    "age": 1.4859,
+    "capital_gain": 0.0,
+    "capital_loss": 0.0,
+    "education_num": 0.004,
+    "hours_per_week": 1.6503,
+    "marital_status": 0.0076,
+    "native_country": 0.1113,
+    "occupation": 0.4057,
+    "relationship": 0.0046,
+    "workclass": 0.017
+  },
+  "metrics": {
+    "client_errors": 5,
+    "error_rate": 0.0055,
+    "input_warnings": 2,
+    "latency_ms_max": 56.19,
+    "latency_ms_mean": 12.62,
+    "latency_ms_p50": 12.08,
+    "latency_ms_p95": 17.05,
+    "model_version": 1,
+    "positive_rate": 0.2262,
+    "records_scored": 902,
+    "requests": 907,
+    "server_errors": 0,
+    "uptime_s": 16.2
+  }
+}
